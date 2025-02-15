@@ -1,12 +1,32 @@
 import { motion } from "framer-motion";
 import { Icons } from "./icons";
 const technologies = [
-  <Icons.typescript width={35} height={35} className="fill-foreground " />,
-  <Icons.react width={35} height={35} className="fill-foreground " />,
-  <Icons.nextjs width={35} height={35} className="fill-foreground  " />,
-  <Icons.tailwind width={35} height={35} className="fill-foreground " />,
-  <Icons.html width={35} height={35} className="fill-foreground " />,
-  <Icons.css width={35} height={35} className="fill-foreground " />,
+  {
+    name: "TypeScript",
+    icon: (
+      <Icons.typescript width={35} height={35} className="fill-foreground" />
+    ),
+  },
+  {
+    name: "React",
+    icon: <Icons.react width={35} height={35} className="fill-foreground" />,
+  },
+  {
+    name: "Next.js",
+    icon: <Icons.nextjs width={35} height={35} className="fill-foreground" />,
+  },
+  {
+    name: "Tailwind CSS",
+    icon: <Icons.tailwind width={35} height={35} className="fill-foreground" />,
+  },
+  {
+    name: "HTML",
+    icon: <Icons.html width={35} height={35} className="fill-foreground" />,
+  },
+  {
+    name: "CSS",
+    icon: <Icons.css width={35} height={35} className="fill-foreground" />,
+  },
 ];
 
 const technologyNames = [
@@ -35,11 +55,10 @@ export default function TechMarquee() {
           ...technologies,
         ].map((tech, index) => (
           <span
-            key={index}
+            key={`${index}`}
             className=" text-lg font-semibold  flex gap-2 pr-10"
           >
-            <div>{tech}</div>•{" "}
-            <div className="truncate">{technologyNames[index % 6]}</div>
+            <div>{tech.icon}</div>• <div className="truncate">{tech.name}</div>
           </span>
         ))}
       </motion.div>
