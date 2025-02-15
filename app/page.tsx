@@ -16,6 +16,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
+const HIRE_NOW_URL =
+  "https://api.whatsapp.com/send?phone=5581997107993&text=Hi!%20I%20found%20your%20portfolio%20on%20your%20personal%20website%20and%20would%20like%20to%20discuss%20a%20potential%20web%20frontend%20project%20with%20you.%20Let%20me%20know%20if%20you%27re%20available%20to%20chat!";
+
 export default function Home() {
   const router = useRouter();
   return (
@@ -37,8 +40,8 @@ export default function Home() {
             <br /> Front-end Developer
           </h1>
           <p className="">
-            Expert Front-End Developer | Specializing in React, Next.js &
-            TypeScript Development
+            Expert Front-End Developer | Specializing in{" "}
+            <strong>React, Next.js & TypeScript</strong> Development
           </p>
           <div className="flex  flex-col  lg:flex-row  gap-5 ">
             <InfoCard
@@ -100,9 +103,15 @@ export default function Home() {
               </CardTitle>
             </CardHeader>
             <CardContent className="py-4  flex items-center justify-center ">
-              <Button className="w-full py-6 bg-gradient-to-r from-emerald-400 to-cyan-400 text-foreground text-xl">
+              <Link
+                href={HIRE_NOW_URL}
+                className={buttonVariants({
+                  className:
+                    "w-full py-6 bg-gradient-to-r from-emerald-400 to-cyan-400 text-foreground text-xl",
+                })}
+              >
                 Hire now
-              </Button>
+              </Link>
             </CardContent>
           </Card>
         </div>
@@ -110,7 +119,7 @@ export default function Home() {
       <TechMarquee />
       <div className="w-full dark:bg-muted/60 bg-muted">
         <div className="flex flex-col gap-3 container py-10 ">
-          <div className=" text-3xl">Bio</div>
+          <div className=" text-3xl">About me</div>
           <div>
             I am a passionate Front-End Developer with extensive experience in
             React, Next.js, and TypeScript, always striving to build

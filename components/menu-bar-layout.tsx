@@ -48,10 +48,10 @@ export const MenubarLayout = () => {
           <Button
             variant="link"
             onClick={() => {
-              router.push("/bio");
+              router.push("/about-me");
             }}
           >
-            Bio
+            About me
           </Button>
 
           <ModeToggle />

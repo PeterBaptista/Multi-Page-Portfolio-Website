@@ -40,7 +40,7 @@ const technologyNames = [
 
 export default function TechMarquee() {
   return (
-    <div className="w-full h-16 text-white py-4 overflow-hidden mx-auto">
+    <div className="w-full h-16 text-foreground py-4 overflow-hidden mx-auto">
       <motion.div
         className="flex shrink-0 "
         initial={{ x: "-100%" }}

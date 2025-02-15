@@ -43,10 +43,10 @@ export function MenuBarDropdown() {
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => {
-              router.push("/bio");
+              router.push("/about-me");
             }}
           >
-            Bio
+            About me
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
