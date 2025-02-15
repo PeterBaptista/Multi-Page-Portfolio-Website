@@ -123,7 +123,14 @@ export default function Home() {
         <div className="h-full pb-10 container flex flex-col gap-5">
           <div className="flex flex-row justify-between items-center py-2">
             <div className=" text-3xl">Recent projects</div>
-            <Button variant="default">View all</Button>
+            <Button
+              variant="default"
+              onClick={() => {
+                router.push("/projects");
+              }}
+            >
+              View all
+            </Button>
           </div>
 
           <div className="w-full flex flex-col lg:flex-row gap-5">
