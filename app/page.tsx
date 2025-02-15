@@ -1,6 +1,7 @@
 "use client";
 import { Icons } from "@/components/icons";
 import { InfoCard } from "@/components/info-card";
+import TechMarquee from "@/components/tech-marque";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Card,
@@ -106,6 +107,7 @@ export default function Home() {
           </Card>
         </div>
       </div>
+      <TechMarquee />
       <div className="w-full dark:bg-muted/60 bg-muted">
         <div className="flex flex-col gap-3 container py-10 ">
           <div className=" text-3xl">Bio</div>
