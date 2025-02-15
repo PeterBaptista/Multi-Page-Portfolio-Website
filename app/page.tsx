@@ -106,11 +106,9 @@ export default function Home() {
           </Card>
         </div>
       </div>
-      <div className="w-full bg-muted/60">
+      <div className="w-full dark:bg-muted/60 bg-muted">
         <div className="flex flex-col gap-3 container py-10 ">
-          <div className="text-background dark:text-foreground text-3xl">
-            Bio
-          </div>
+          <div className=" text-3xl">Bio</div>
           <div>
             I am a passionate Front-End Developer with extensive experience in
             React, Next.js, and TypeScript, always striving to build
@@ -124,9 +122,7 @@ export default function Home() {
       <div className="w-full ">
         <div className="h-full pb-10 container flex flex-col gap-5">
           <div className="flex flex-row justify-between items-center py-2">
-            <div className="text-background dark:text-foreground text-3xl">
-              Recent projects
-            </div>
+            <div className=" text-3xl">Recent projects</div>
             <Button variant="default">View all</Button>
           </div>
 
@@ -135,7 +131,7 @@ export default function Home() {
               return (
                 <Card
                   key={item.name}
-                  className="overflow-hidden w-full lg:w-1/3"
+                  className="overflow-hidden w-full lg:w-1/3 hover:bg-muted/60 cursor-pointer"
                 >
                   <CardHeader>
                     <CardTitle>{item.name}</CardTitle>
