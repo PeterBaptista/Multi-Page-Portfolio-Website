@@ -1,6 +1,7 @@
+"use client";
 import { Icons } from "@/components/icons";
 import { InfoCard } from "@/components/info-card";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -11,8 +12,11 @@ import {
 import { mockProjects } from "@/mock/mock-data";
 import profilePhoto from "@/public/foto.png";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <section className="flex flex-col gap-2">
       <div className="flex flex-col gap-4 lg:flex-row">
@@ -54,26 +58,37 @@ export default function Home() {
           </div>
           <Card className="w-full ">
             <CardContent className="py-4  flex items-center justify-center ">
-              <Button
-                variant="ghost"
-                className="hover:bg-muted-foreground/60 py-2"
+              <Link
+                href={"https://www.linkedin.com/in/pedro-baptista-54b124213/"}
+                className={buttonVariants({
+                  variant: "ghost",
+                  className: "hover:bg-muted-foreground/60 py-2",
+                })}
+                onClick={() => {
+                  router.push(
+                    "https://www.linkedin.com/in/pedro-baptista-54b124213/"
+                  );
+                }}
               >
                 <Icons.linkedin
                   width={35}
                   height={35}
                   className="fill-foreground 0"
                 />
-              </Button>
-              <Button
-                variant="ghost"
-                className="hover:bg-muted-foreground/60 py-2"
+              </Link>
+              <Link
+                className={buttonVariants({
+                  variant: "ghost",
+                  className: "hover:bg-muted-foreground/60 py-2",
+                })}
+                href={"https://github.com/PeterBaptista"}
               >
                 <Icons.gitHub
                   width={35}
                   height={35}
                   className="fill-foreground "
                 />
-              </Button>
+              </Link>
             </CardContent>
           </Card>
 
