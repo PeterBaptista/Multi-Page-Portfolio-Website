@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
+import { mockProjects } from "@/mock/mock-data";
 import profilePhoto from "@/public/foto.png";
 import Image from "next/image";
 
@@ -78,48 +79,33 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="flex flex-col bg-muted h-full pb-24 w-full space-y-8">
+      <section className="flex flex-col bg-muted h-full pb-24 w-full gap-8">
         <div className="flex flex-row   justify-between items-center container">
           <Label>Recent projects</Label>
           <Button variant="link"> View all</Button>
         </div>
-        <div className="container flex flex-row overflow-x-auto h-full flex-wrap  gap-8 justify-around">
-          <Card className="w-96 h-80 cursor-pointer">
-            <CardHeader>
-              <CardTitle>Creating an Animated Login Form</CardTitle>
-              <CardDescription>23 Jan | Animated Layout</CardDescription>
-            </CardHeader>
-            <CardContent>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos sit
-              animi iure quae nemo. Laudantium error facilis quas veniam commodi
-              aperiam, unde, provident accusantium possimus eligendi molestiae
-              libero iure culpa!
-            </CardContent>
-          </Card>
-          <Card className="w-96 h-80 cursor-pointer">
-            <CardHeader>
-              <CardTitle>Creating an Animated Login Form</CardTitle>
-              <CardDescription>23 Jan | Animated Layout</CardDescription>
-            </CardHeader>
-            <CardContent>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos sit
-              animi iure quae nemo. Laudantium error facilis quas veniam commodi
-              aperiam, unde, provident accusantium possimus eligendi molestiae
-              libero iure culpa!
-            </CardContent>
-          </Card>
-          <Card className="w-96 h-80 cursor-pointer">
-            <CardHeader>
-              <CardTitle>Creating an Animated Login Form</CardTitle>
-              <CardDescription>23 Jan | Animated Layout</CardDescription>
-            </CardHeader>
-            <CardContent>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos sit
-              animi iure quae nemo. Laudantium error facilis quas veniam commodi
-              aperiam, unde, provident accusantium possimus eligendi molestiae
-              libero iure culpa!
-            </CardContent>
-          </Card>
+        <div className="container  h-full lg:h-[500px] flex  flex-col lg:flex-row   lg:flex-wrap  gap-8 lg:justify-around">
+          {mockProjects.map((item, index) => {
+            return (
+              <Card className="w-96 h-72 cursor-pointer" key={`${index}`}>
+                <CardHeader>
+                  <CardTitle>{item.name}</CardTitle>
+                  <CardDescription className="line-clamp-3">
+                    {item.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="p-0 h-full overflow-hidden">
+                  <Image
+                    src={item.image_url}
+                    alt="Project image"
+                    height={800}
+                    width={800}
+                    className="h-full w-full object-cover"
+                  />
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </section>
     </main>
