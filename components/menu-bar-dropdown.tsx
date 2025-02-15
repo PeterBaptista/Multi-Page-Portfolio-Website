@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { useRouter } from "next/navigation";
+import { ModeToggle } from "./mode-toggle";
 
 export function MenuBarDropdown() {
   const router = useRouter();
@@ -47,6 +48,10 @@ export function MenuBarDropdown() {
             Bio
           </DropdownMenuItem>
         </DropdownMenuGroup>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>
+          <ModeToggle />
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

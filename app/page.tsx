@@ -18,7 +18,7 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const router = useRouter();
   return (
-    <section className="flex flex-col gap-2">
+    <section className="flex flex-col gap-10">
       <div className="flex flex-col gap-4 lg:flex-row">
         <div className="container lg:w-1/3">
           <Image
@@ -106,18 +106,37 @@ export default function Home() {
           </Card>
         </div>
       </div>
+      <div className="w-full bg-muted/60">
+        <div className="flex flex-col gap-3 container py-10 ">
+          <div className="text-background dark:text-foreground text-3xl">
+            Bio
+          </div>
+          <div>
+            I am a passionate Front-End Developer with extensive experience in
+            React, Next.js, and TypeScript, always striving to build
+            high-quality, user-friendly interfaces. I&apos;ve been doing
+            frontend project for about 3 years and I&apos;d love to create
+            something you find useful and be satisfied with it
+          </div>
+        </div>
+      </div>
 
-      <div className="w-full bg-gray-800 ">
+      <div className="w-full ">
         <div className="h-full pb-10 container flex flex-col gap-5">
           <div className="flex flex-row justify-between items-center py-2">
-            <div>Recent projetcs</div>
+            <div className="text-background dark:text-foreground text-3xl">
+              Recent projects
+            </div>
             <Button variant="default">View all</Button>
           </div>
 
           <div className="w-full flex flex-col lg:flex-row gap-5">
-            {mockProjects.map((item, index) => {
+            {mockProjects.slice(0, 3).map((item, index) => {
               return (
-                <Card key={item.name} className="overflow-hidden">
+                <Card
+                  key={item.name}
+                  className="overflow-hidden w-full lg:w-1/3"
+                >
                   <CardHeader>
                     <CardTitle>{item.name}</CardTitle>
                     <CardDescription className="line-clamp-3">
