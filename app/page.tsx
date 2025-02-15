@@ -1,16 +1,14 @@
-import { ModeToggle } from "@/components/mode-toggle";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import profilePhoto from "@/public/profile-photo.jpg";
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
+import profilePhoto from "@/public/profile-photo.jpg";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -25,7 +23,7 @@ export default function Home() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
             nesciunt laboriosam itaque officiis deleniti nulla labore. Repellat,
             cum accusamus excepturi impedit unde, corrupti asperiores quam
-            magnam similique quisquam id ratione.
+            magnam similique quisquam id ratione
           </p>
           <div className="flex flex-col space-y-5">
             <Button className="w-56">Download resume EN-US</Button>
