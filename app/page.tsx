@@ -76,6 +76,19 @@ export default function Home() {
               </Button>
             </CardContent>
           </Card>
+
+          <Card className="w-full ">
+            <CardHeader>
+              <CardTitle className="text-3xl">
+                Bring your ideas to life through Frontend design
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="py-4  flex items-center justify-center ">
+              <Button className="w-full py-6 bg-gradient-to-r from-emerald-400 to-cyan-400 text-foreground text-xl">
+                Hire now
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       </div>
 
